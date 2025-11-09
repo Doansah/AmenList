@@ -1,5 +1,7 @@
 package doansah.github.amenlist;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,7 +28,7 @@ public class UserService {
 
         }
 
-        public record UserBasicDTO {
+        public record UserBasicDTO() {
             private static String name;
             private static String email;
             private static String phoneNumber;
@@ -34,18 +36,22 @@ public class UserService {
         }
         // the idea here is that if the ADMIN requests -> UserADMINDTO
         // JWT claims inform who Admin is for Controller.
-        // How is that passed on to
-        public record UserAdminDTO {
-            pr
+        // How is that passed on to service?????
+
+
+        public record UserAdminDTO() {
+            private static String name;
+            private static String email;
+            private static String phoneNumber;
+            private static String role; // only difference for now...
         }
 
-        public UserDTO toDTO(User u) {
-            if (u.getRole().equals(Role.ADMIN)) {
+        public UserBasicDTO toBasicDTO(User u) {
+            return new UserBasicDTO();
 
-                return new UserController.UserDTO(u.getId(), u.getName(), u.getEmail(), u.getPhoneNumber(), u.getRole());
-            }
-
-
+        }
+        public UserAdminDTO toAdminDTO(User u) {
+            return new UserAdminDTO();
         }
 
     }
