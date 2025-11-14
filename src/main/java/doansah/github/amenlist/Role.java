@@ -1,6 +1,7 @@
 package doansah.github.amenlist;
 
 public enum Role {
-    ADMIN,
+    CHURCH_ADMIN,
     USER,
+
 }

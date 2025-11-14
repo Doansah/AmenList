@@ -12,6 +12,10 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    public void save(User user) {
+        userRepository.save(user);
+    }
+
     public class UserMapper {
         private Long id;
         private String name;
@@ -27,6 +31,8 @@ public class UserService {
             role = u.getRole();
 
         }
+
+    }
 
         public record UserBasicDTO() {
             private static String name;
@@ -54,7 +60,7 @@ public class UserService {
             return new UserAdminDTO();
         }
 
-    }
+
 
 
 
