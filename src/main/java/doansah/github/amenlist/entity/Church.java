@@ -1,6 +1,7 @@
-package doansah.github.amenlist;
+package doansah.github.amenlist.entity;
 
 import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

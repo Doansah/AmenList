@@ -1,7 +1,8 @@
-package doansah.github.amenlist;
+package doansah.github.amenlist.service;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+import doansah.github.amenlist.entity.enums.Role;
+import doansah.github.amenlist.repository.UserRepository;
+import doansah.github.amenlist.entity.User;
 import org.springframework.stereotype.Service;
 
 @Service
