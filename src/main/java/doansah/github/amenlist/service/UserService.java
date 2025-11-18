@@ -3,7 +3,11 @@ package doansah.github.amenlist.service;
 import doansah.github.amenlist.entity.enums.Role;
 import doansah.github.amenlist.repository.UserRepository;
 import doansah.github.amenlist.entity.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import org.springframework.data.domain.PageRequest;
 
 @Service
 public class UserService {
@@ -16,6 +20,13 @@ public class UserService {
     public void save(User user) {
         userRepository.save(user);
     }
+
+    public Page<User> findAll(int pageNumber, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        return userRepository.findAll(pageable);
+
+    }
+
 
     public class UserMapper {
         private Long id;
